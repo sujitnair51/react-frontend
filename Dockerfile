@@ -20,5 +20,6 @@ COPY . /app
 RUN npm run build
 
 # Run Steps
-FROM registry.access.redhat.com/ubi8/nginx-118
+# FROM registry.access.redhat.com/ubi8/nginx-118
+FROM nginx:1.19.8-alpine
 COPY --from=build-step /app/build /usr/share/nginx/html
