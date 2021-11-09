@@ -1,7 +1,13 @@
 # Build Steps
 FROM registry.access.redhat.com/ubi8/nodejs-12 as build-step
 
+USER 0 
+
 RUN mkdir /app
+
+RUN chown -R 1001:0 /app 
+
+USER 1001
 
 WORKDIR /app
 
