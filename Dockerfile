@@ -1,5 +1,5 @@
 # Build Steps
-FROM node:alpine3.10 as build-step
+FROM registry.access.redhat.com/ubi8/nodejs-12 as build-step
 
 RUN mkdir /app
 
@@ -14,5 +14,5 @@ COPY . /app
 RUN npm run build
 
 # Run Steps
-FROM nginx:1.19.8-alpine
+FROM registry.access.redhat.com/ubi8/nginx-118
 COPY --from=build-step /app/build /usr/share/nginx/html
