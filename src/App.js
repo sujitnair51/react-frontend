@@ -12,7 +12,7 @@ function App() {
   console.log("1");
   useEffect(() => {
   setHelloData({ loading: true });
-   fetch('http://nodejs-helloworld-sjnr0017-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com')
+   fetch('http://helloworld-sjnr0017-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com')
   .then(response => {
     console.log("respose ", response);
   return response.json();})
